@@ -3,7 +3,7 @@
 	<header data-role="header">
 		<a href="#perfil" data-icon="user" class="ui-btn-left"><?php echo $_SESSION['name']; ?></a>
 		<h1>G-PROCESS</h1>
-		<button id="sair" data-icon="lock" class="ui-btn-right">Sair</button>
+		<button onclick="sair()" id="sair" data-icon="lock" class="ui-btn-right">Sair</button>
 	</header>
 	<nav data-role="navbar">
 		<ul>
@@ -15,10 +15,10 @@
 	<main>
 		<ul data-role="listview" data-inset="true">
 			<li><a href="#perfil-modificacao">
-			<img src="../../img/user.png">
-			<h2>Usuário</h2>
-			<p>Email: usuario@exemplo.com</p>
-			<p>Telefone: 919999-9999</p>
+			<img src="img/user.png">
+			<h2><?php echo $_SESSION['name'] ?></h2>
+			<p>Email: <?php echo $_SESSION['email'] ?></p>
+			<p>Telefone: <?php echo $_SESSION['number_phone'] ?></p>
 			</a>
 			</li>
 		</ul>
@@ -42,7 +42,7 @@
 <!-- Projetos Participados -->
 <div id="participados" data-role="page" data-theme="b">
 	<header data-role="header">
-		<a href="#perfil" data-icon="user" class="ui-btn-left">Perfil</a>
+		<a href="#perfil" data-icon="user" class="ui-btn-left"><?php echo $_SESSION['name']; ?></a>
 		<h1>G-PROCESS</h1>
 		<a href="#sair" data-icon="lock" class="ui-btn-right">Sair</a>
 	</header>
@@ -56,10 +56,10 @@
 	<main>
 		<ul data-role="listview" data-inset="true">
 			<li><a href="#perfil-modificacao">
-			<img src="../../img/user.png">
-			<h2>Usuário</h2>
-			<p>Email: usuario@exemplo.com</p>
-			<p>Telefone: 919999-9999</p>
+			<img src="img/user.png">
+			<h2><?php echo $_SESSION['name'] ?></h2>
+			<p>Email: <?php echo $_SESSION['email'] ?></p>
+			<p>Telefone: <?php echo $_SESSION['number_phone'] ?></p>
 			</a>
 			</li>
 		</ul>
@@ -83,7 +83,7 @@
 <!-- Parceiros -->
 <div id="parceiros" data-role="page" data-theme="b">
 	<header data-role="header">
-		<a href="#perfil" data-icon="user" class="ui-btn-left">Perfil</a>
+		<a href="#perfil" data-icon="user" class="ui-btn-left"><?php echo $_SESSION['name']; ?></a>
 		<h1>G-PROCESS</h1>
 		<a href="#sair" data-icon="lock" class="ui-btn-right">Sair</a>
 	</header>
@@ -97,10 +97,10 @@
 	<main>
 		<ul data-role="listview" data-inset="true">
 			<li><a href="#perfil-modificacao">
-			<img src="../../img/user.png">
-			<h2>Usuário</h2>
-			<p>Email: usuario@exemplo.com</p>
-			<p>Telefone: 919999-9999</p>
+			<img src="img/user.png">
+			<h2><?php echo $_SESSION['name'] ?></h2>
+			<p>Email: <?php echo $_SESSION['email'] ?></p>
+			<p>Telefone: <?php echo $_SESSION['number_phone'] ?></p>
 			</a>
 			</li>
 		</ul>
@@ -111,27 +111,8 @@
 				<li><a href="#parceiros" class="ui-btn-active">Parceiros</a></li>
 			</ul>
 		</nav>
-		<ul data-role="listview" data-inset="true">
-			<li><a href="#parceiro">
-			<img src="../../img/user.png">
-			<h2>Parceiro</h2>
-			<p>Projetos Gerenciados: N°</p>
-			<p>Projetos Participados: N°</p>
-			</a>
-			</li>
-			<li><a href="#parceiro">
-			<img src="../../img/user.png">
-			<h2>Parceiro</h2>
-			<p>Projetos Gerenciados: N°</p>
-			<p>Projetos Participados: N°</p></a>
-			</li>
-			<li><a href="#parceiro">
-			<img src="../../img/user.png">
-			<h2>Parceiro</h2>
-			<p>Projetos Gerenciados: N°</p>
-			<p>Projetos Participados: N°</p></a>
-			</li>
-		</ul>
+		<div class='parceiros'>
+		</div>
 	</main>
 	<footer data-role="footer" class="ui-bar" data-position="fixed">&reg; Direcione Sua Ideia </footer>
 </div>
@@ -141,17 +122,18 @@
 		<h1>G-PROCESS</h1>
 	</header>
 	<h1 align="center">Editar Perfil</h1>
-	<form method="post" action="#">
-		<label>Nome Completo:</label>
-		<input type="text" placeholder="Usuário" name="nome" data-theme="a">
+	<form method="post" id='edit_perfil'>
+		<input type="text" value="<?php echo $_SESSION['name'] ?>" placeholder="Digite seu nome" name="name" data-theme="a">
 		<label>Login</label>
-		<input type="text" placeholder="Usuário" name="nome" data-theme="a">
+		<input type="email" placeholder="Digite seu Login" name="login" data-theme="a" value=<?php echo $_SESSION['login'] ?>>
 		<label>Senha</label>
-		<input type="text" placeholder="Usuário" name="nome" data-theme="a">
+		<input type="password" name="password" data-theme="a" placeholder="Digite sua senha nova senha">
 		<label>Telefone</label>
-		<input type="text" placeholder="Usuário" name="nome" data-theme="a">
+		<input type="text" placeholder="Digite seu número de telefone" name="number_phone" data-theme="a" value=<?php echo $_SESSION['number_phone'] ?>>
 		<label>Email</label>
-		<input type="text" placeholder="Usuário" name="nome" data-theme="a">
+		<input type="text" placeholder="Digite seu Email" name="email" data-theme="a" value=<?php echo $_SESSION['email'] ?>>
 		<input type="submit" value="Salvar">
 	</form>
 </div>
+<script src="js/perfil/edit_perfil.js"></script>
+<script src="js/perfil/find_partner.js"></script>

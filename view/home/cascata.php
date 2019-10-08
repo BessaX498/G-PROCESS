@@ -2,7 +2,7 @@
 	<header data-role="header">
 		<a href="#perfil" data-icon="user" class="ui-btn-left"><?php echo $_SESSION['name']; ?></a>
 		<h1>G-PROCESS</h1>
-		<button id="sair" data-icon="lock" class="ui-btn-right">Sair</button>
+		<button onclick="sair()" id="sair" data-icon="lock" class="ui-btn-right">Sair</button>
 	</header>
 	<nav data-role="navbar">
 		<ul>

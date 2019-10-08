@@ -2,7 +2,7 @@
 	class db
 	{
 		//Variáveis
-		public $host = 'localhost';
+		public $host = '127.0.0.1';
 		public $user = 'root';
 		public $senha = '';
 		public $db = 'maindb';
@@ -45,20 +45,39 @@
 					$condicoes .= $atributos[$i]."='".$values[$i]."'";
 				}
 			}
-				
+
 			$sql = "INSERT INTO $tabela ($campos) VALUES ($valores)";
 			
 			if (mysqli_query($link, $sql)) {
-				echo "O usuário foi cadastrado com Sucesso";
+				echo "O usuário adcionado com Sucesso";
 			}else{
 				echo "O usuário não foi cadastrado com Sucesso";
 			}
 		}
+		//Método de Busca
 		public function query($colunas, $tabela, $condicao){
 			$link = $this->conecta_mysql();
-			$sql = "SELECT $colunas FROM $tabela WHERE $condicao;";
+			$sql = "SELECT $colunas FROM $tabela $condicao;";
 			$resultado_id = mysqli_query($link, $sql);
 			return $resultado_id;
+		}
+		
+		//Método de Update
+		public function update($edicao, $tabela, $condicao){
+			$link = $this->conecta_mysql();
+			$sql = "UPDATE $tabela set $edicao $condicao";
+			
+		}
+
+		//Método Delete
+		public function delete($tabela, $condicao){
+			$link = $this->conecta_mysql();
+			$sql = "DELETE FROM $tabela $condicao";
+			if(mysqli_query($link, $sql)){
+				echo "Deletado com Sucesso";
+			}else{
+				echo "Ocorreu um erro ao Deletar";
+			}
 		}
 	}
 ?>

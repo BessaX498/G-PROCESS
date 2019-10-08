@@ -1,14 +1,7 @@
-<script type="text/javascript" src="../js/home/sair.js"></script>
 <?php
+
 	//Iniciar Sessão
 	session_start();
-
-	//API Google
-	//require_once('model/api/google/config.php');
-
-	//$authUrl = $client->createAuthUrl();
-
-	//header('location:'.$authUrl);
 
 	//Incluir a Header
 	include('control/header.html');

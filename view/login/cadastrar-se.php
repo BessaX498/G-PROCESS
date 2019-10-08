@@ -5,7 +5,7 @@
 		<h1>G-PROCESS</h1>
 	</div>
 	<div data-role="content">
-		<img src="img/logo.png" width="280" class="logo">
+		<img src="../../img/logo.png" width="280" class="logo">
 		<h1 align="center">Cadastrar-se</h1>
 		<form method="post" id="insert_user">
 			<div class="box">

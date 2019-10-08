@@ -2,7 +2,7 @@
 	<header data-role="header">
 		<a href="#perfil" data-icon="user" class="ui-btn-left"><?php echo $_SESSION['name']; ?></a>
 		<h1>G-PROCESS</h1>
-		<button id="sair" data-icon="lock" class="ui-btn-right">Sair</button>
+		<button onclick="sair()" id="sair" data-icon="lock" class="ui-btn-right">Sair</button>
 	</header>
 	<nav data-role="navbar">
 		<ul>
@@ -12,13 +12,11 @@
 		</ul>
 	</nav>
 	<main>
+		<h1 style="text-align: center">Lista de Membros</h1>
 		<div id="find_people">
-			
+	
 		</div>
-		<div data-role='popup' id='purchase' data-theme='a' data-overlay-theme='b' class='ui-content' style='max-width:340px; padding-bottom:2em;'>
-		    <h3>Deseja Solicitar parceiria?</h3>
-			<button data-theme='b'>Solicitar Parceiria</button>
-		</div>
+		
 	</main>
 	<footer data-role="footer" class="ui-bar" data-position="fixed">&reg; Direcione Sua Ideia </footer>
 </div>

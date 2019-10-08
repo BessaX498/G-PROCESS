@@ -2,7 +2,7 @@
 	<header data-role="header">
 		<a href="#perfil" data-icon="user" class="ui-btn-left"><?php echo $_SESSION['name']; ?></a>
 		<h1>G-PROCESS</h1>
-		<button id="sair" data-icon="lock" class="ui-btn-right">Sair</button>
+		<button onclick="sair()" id="sair" name="sair" data-icon="lock" class="ui-btn-right">Sair</button>
 	</header>
 	<nav data-role="navbar">
 		<ul>
@@ -12,7 +12,7 @@
 		</ul>
 	</nav>
 	<main>
-		<H1>Selecionar Parceiros</H1>
+		<!--<H1>Selecionar Parceiros</H1>
 		<ul data-role="listview" data-split-icon="plus" data-filter="true" data-split-theme="b" data-inset="true">
 			<li>
 				<a href="#">
@@ -45,29 +45,26 @@
 		    <a href="#" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Solicitar</a>
 		    <a href="#" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancelar</a>
 		</div>
-		<hr>
-		<h1>Digitar Nome do Game</h1>
-		<input type="text" name="nome" placeholder="Nome do Game" data-theme="a">
-		<hr>
-		<h1>Selecionar Metodologia</h1>
-		<fieldset data-role="controlgroup">
-			<!--<input type="radio" name="metodologia" id="cascata" value="choice-1" checked="checked">
-			<label for="cascata"><a href="#cascata">Cascata</a></label>
-			<input type="radio" name="metodologia" id="espiral" value="choice-2">
-			<label for="espiral">Espiral</label>
-			<input type="radio" name="metodologia" id="prototipacao" value="choice-3">
-			<label for="prototipacao">Prototipação</label>
-			<input type="radio" name="metodologia" id="incremental" value="choice-4">
-			<label for="incremental">Incremental</label>
-			<input type="radio" name="metodologia" id="scrum" value="choice-4">
-			<label for="scrum">Scrum</label>-->
-			<li><a href="#cascata" data-role="button">Cascata</a></li>
-			<li><a href="#incremental" data-role="button">Incremental</a></li>
-			<li><a href="#espiral" data-role="button">Espiral</a></li>
-			<li><a href="#scrum_definir_nome" data-role="button">Scrum</a></li>
-			<li><a href="#prototipacao" data-role="button">Prototipação</a></li>
-		</fieldset>
-		<input type="submit" name="" value="Próximo">
+		<hr>-->
+		<form method="post" id="project_insert">
+			<h1>Digitar Nome do Game</h1>
+			<input type="text" name="nome" placeholder="Nome do Game" data-theme="a" required>
+			<h1>Selecionar Metodologia</h1>
+			<fieldset data-role="controlgroup">
+				<input type="radio" name="metodologia" id="cascata" value="cascata" checked="checked" >
+				<label for="cascata">Cascata</label>
+				<input type="radio" name="metodologia" id="espiral" value="espiral">
+				<label for="espiral">Espiral</label>
+				<input type="radio" name="metodologia" id="prototipacao" value="prototipacao">
+				<label for="prototipacao">Prototipação</label>
+				<input type="radio" name="metodologia" id="incremental" value="incremental">
+				<label for="incremental">Incremental</label>
+				<input type="radio" name="metodologia" id="scrum" value="scrum">
+				<label for="scrum">Scrum</label>
+			</fieldset>
+			<input type="submit" name="" value="Próximo">
+			</form>
 	</main>
 	<footer data-role="footer" class="ui-bar" data-position="fixed">&reg; Direcione Sua Ideia </footer>
 </div>
+<script type="text/javascript" src="js/project/insert_project.js"></script>
