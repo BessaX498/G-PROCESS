@@ -8,6 +8,9 @@
 
 	//Objetos
 	$db = new db();
+	$colunas = 'id_partner, name, method';
+	$tabela = ' project ';
+	$condicao = "";
 	$project = new project($name, $method);
 	$db->insert($project);
 

@@ -12,6 +12,7 @@
 		</ul>
 	</nav>
 	<main>
+
 		<!--<H1>Selecionar Parceiros</H1>
 		<ul data-role="listview" data-split-icon="plus" data-filter="true" data-split-theme="b" data-inset="true">
 			<li>
@@ -47,6 +48,8 @@
 		</div>
 		<hr>-->
 		<form method="post" id="project_insert">
+
+		<div class='parceiros_projetos'></div>
 			<h1>Digitar Nome do Game</h1>
 			<input type="text" name="nome" placeholder="Nome do Game" data-theme="a" required>
 			<h1>Selecionar Metodologia</h1>
@@ -68,3 +71,5 @@
 	<footer data-role="footer" class="ui-bar" data-position="fixed">&reg; Direcione Sua Ideia </footer>
 </div>
 <script type="text/javascript" src="js/project/insert_project.js"></script>
+<script src="js/perfil/find_partner_project.js"></script>
+
